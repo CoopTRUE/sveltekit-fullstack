@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "svelte.svelte-vscode",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "bradlc.vscode-tailwindcss",
+    "usernamehw.errorlens",
+    "pkief.material-icon-theme",
+    "yoavbls.pretty-ts-errors",
+    "simonsiefke.svg-preview"
+  ]
+}
