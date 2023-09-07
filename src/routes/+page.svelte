@@ -1,6 +1,8 @@
 <script lang="ts">
   import { signIn } from '@auth/sveltekit/client'
   import { Smile } from 'lucide-svelte'
+
+  export let data
 </script>
 
 <svelte:head>
@@ -10,7 +12,7 @@
 
 <main>
   <h1 class="flex items-center text-green-500">Welcome<Smile /></h1>
-  <button on:click={() => signIn('github')}>hi</button>
+  <button on:click={() => signIn('github')}>{data.msg}</button>
 </main>
 
 <style lang="postcss">
