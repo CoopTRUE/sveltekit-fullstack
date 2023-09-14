@@ -1,4 +1,4 @@
-import { t } from '../t'
+import t from './t'
 
 export const logger = t.middleware(async ({ path, type, next }) => {
   const start = Date.now()

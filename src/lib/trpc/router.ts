@@ -1,10 +1,12 @@
-import { greeting } from './routes/greeting'
-import { t } from './t'
+import greeting from './routes/greeting'
+import t from './t'
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server'
 
-export const router = t.router({
+const router = t.router({
   greeting,
 })
+
+export default router
 
 export type Router = typeof router
 
