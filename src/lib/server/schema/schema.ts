@@ -1,6 +1,4 @@
-import type { AdapterAccount } from '@auth/core/adapters'
-import type { InferSelectModel } from 'drizzle-orm'
-import { timestamp, pgTable, text, primaryKey, integer } from 'drizzle-orm/pg-core'
+import { timestamp, pgTable, text } from 'drizzle-orm/pg-core'
 
 export * from './auth'
 

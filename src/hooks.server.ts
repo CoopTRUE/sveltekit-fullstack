@@ -1,5 +1,5 @@
 import { AUTH_SECRET, GITHUB_ID, GITHUB_SECRET } from '$env/static/private'
-import db from '$lib/server/db'
+import { db } from '$lib/server/db'
 import { createContext } from '$lib/trpc/context'
 import router from '$lib/trpc/router'
 import GitHub from '@auth/core/providers/github'
@@ -29,6 +29,7 @@ const authHandle = SvelteKitAuth({
   ],
   callbacks: {
     session({ session, user }) {
+      console.log({ ...session, user })
       return { ...session, user }
     },
   },
