@@ -13,6 +13,7 @@
 <main>
   <h1 class="flex items-center text-green-500">Welcome<Smile /></h1>
   <button on:click={() => signIn('github')}>{data.msg}</button>
+  <a href="/mockData">test</a>
 </main>
 
 <style lang="postcss">

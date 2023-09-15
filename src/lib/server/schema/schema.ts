@@ -5,8 +5,9 @@ export * from './auth'
 
 export const users = pgTable('user', {
   id: text('id').notNull().primaryKey(),
-  name: text('name'),
+  name: text('name').notNull(),
   email: text('email').notNull(),
   emailVerified: timestamp('emailVerified', { mode: 'date' }),
-  image: text('image'),
+  image: text('image').notNull(),
+  createdAt: timestamp('createdAt', { withTimezone: true }).defaultNow(),
 })

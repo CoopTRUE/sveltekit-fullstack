@@ -20,6 +20,9 @@ dependencies:
   '@sveltejs/kit':
     specifier: ^1.24.1
     version: 1.24.1(svelte@4.2.0)(vite@4.4.9)
+  '@tanstack/svelte-query':
+    specifier: ^4.35.3
+    version: 4.35.3(svelte@4.2.0)
   '@total-typescript/ts-reset':
     specifier: ^0.5.1
     version: 0.5.1
@@ -741,6 +744,19 @@ packages:
       vitefu: 0.2.4(vite@4.4.9)
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@tanstack/query-core@4.35.3:
+    resolution: {integrity: sha512-PS+WEjd9wzKTyNjjQymvcOe1yg8f3wYc6mD+vb6CKyZAKvu4sIJwryfqfBULITKCla7P9C4l5e9RXePHvZOZeQ==}
+    dev: false
+
+  /@tanstack/svelte-query@4.35.3(svelte@4.2.0):
+    resolution: {integrity: sha512-4gAWm6L+rofZOXZH//JKqKZoGOC1+/j0WgycpM9CwKKq/qIbXCoGW0r+0cO31s7O/F4v0qm+YZ3U7owOWfaiwQ==}
+    peerDependencies:
+      svelte: '>=3 <5'
+    dependencies:
+      '@tanstack/query-core': 4.35.3
+      svelte: 4.2.0
     dev: false
 
   /@total-typescript/ts-reset@0.5.1:

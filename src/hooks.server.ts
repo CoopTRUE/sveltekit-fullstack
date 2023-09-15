@@ -1,7 +1,9 @@
 import { AUTH_SECRET, GITHUB_ID, GITHUB_SECRET } from '$env/static/private'
+import db from '$lib/server/db'
 import { createContext } from '$lib/trpc/context'
 import router from '$lib/trpc/router'
 import GitHub from '@auth/core/providers/github'
+import { DrizzleAdapter } from '@auth/drizzle-adapter'
 import { SvelteKitAuth } from '@auth/sveltekit'
 import type { Handle } from '@sveltejs/kit'
 import { sequence } from '@sveltejs/kit/hooks'
@@ -16,6 +18,7 @@ const preloadHandle = (({ event, resolve }) => {
 }) satisfies Handle
 
 const authHandle = SvelteKitAuth({
+  adapter: DrizzleAdapter(db),
   trustHost: true,
   secret: AUTH_SECRET,
   providers: [

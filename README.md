@@ -1,6 +1,6 @@
-# Title
+# Sveltekit Fullstack
 
-Description
+A fullstack Sveltekit template with tRPC, DrizzleORM, @auth/sveltekit, TanStack Query, and TailwindCSS.
 
 ## Installing
 
@@ -25,4 +25,4 @@ pnpm dev
 pnpm build
 ```
 
-> This project runs on [Vercel](https://vercel.com/) and was created by [CoopTRUE](https://github.com/CoopTRUE)
+> This project was created by [CoopTRUE](https://github.com/CoopTRUE)
