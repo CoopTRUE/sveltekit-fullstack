@@ -1,7 +1,7 @@
-import { t } from './t'
+import { middleware } from './t'
 import { TRPCError } from '@trpc/server'
 
-export const logger = t.middleware(async ({ path, type, next }) => {
+export const logger = middleware(async ({ path, type, next }) => {
   const start = Date.now()
   const result = await next()
   const ms = Date.now() - start
@@ -9,7 +9,7 @@ export const logger = t.middleware(async ({ path, type, next }) => {
   return result
 })
 
-export const auth = t.middleware(async ({ ctx, next }) => {
+export const auth = middleware(async ({ ctx, next }) => {
   if (!ctx.session?.user) {
     throw new TRPCError({
       code: 'UNAUTHORIZED',

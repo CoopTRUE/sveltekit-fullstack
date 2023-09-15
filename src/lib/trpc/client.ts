@@ -1,4 +1,4 @@
-import type { Router } from './router'
+import type { Router } from './routers/_app'
 import superjson from 'superjson'
 import { createTRPCClient, type TRPCClientInit } from 'trpc-sveltekit'
 

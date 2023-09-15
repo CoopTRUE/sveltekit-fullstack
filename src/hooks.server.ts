@@ -1,7 +1,7 @@
 import { AUTH_SECRET, GITHUB_ID, GITHUB_SECRET } from '$env/static/private'
 import { db } from '$lib/server/db'
 import { createContext } from '$lib/trpc/context'
-import router from '$lib/trpc/router'
+import { appRouter } from '$lib/trpc/routers/_app'
 import GitHub from '@auth/core/providers/github'
 import { DrizzleAdapter } from '@auth/drizzle-adapter'
 import { SvelteKitAuth } from '@auth/sveltekit'
@@ -38,5 +38,5 @@ const authHandle = SvelteKitAuth({
 export const handle = sequence(
   preloadHandle,
   authHandle,
-  createTRPCHandle({ router, createContext })
+  createTRPCHandle({ router: appRouter, createContext })
 )

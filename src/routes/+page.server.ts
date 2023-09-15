@@ -1,8 +1,8 @@
 import { createContext } from '$lib/trpc/context'
-import router from '$lib/trpc/router'
+import { appRouter } from '$lib/trpc/routers/_app'
 
 export async function load(event) {
-  const caller = router.createCaller(await createContext(event))
+  const caller = appRouter.createCaller(await createContext(event))
   const msg = await caller.greeting()
   return { msg }
 }
