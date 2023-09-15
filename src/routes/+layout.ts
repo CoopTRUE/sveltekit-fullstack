@@ -6,6 +6,7 @@ export const load = async () => {
     defaultOptions: {
       queries: {
         enabled: browser,
+        refetchOnMount: false,
       },
     },
   })

@@ -3,7 +3,7 @@
   import { createQuery } from '@tanstack/svelte-query'
 
   const query = createQuery({
-    queryKey: ['posts'],
+    queryKey: ['mockData'],
     queryFn: () => trpc().mockData.query(),
   })
 </script>
