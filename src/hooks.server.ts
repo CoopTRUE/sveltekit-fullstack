@@ -27,6 +27,11 @@ const authHandle = SvelteKitAuth({
       clientSecret: GITHUB_SECRET,
     }),
   ],
+  callbacks: {
+    session({ session, user }) {
+      return { ...session, user }
+    },
+  },
 })
 
 export const handle = sequence(
