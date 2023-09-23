@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@auth/core':
-    specifier: ^0.13.0
-    version: 0.13.0
+    specifier: ^0.15.1
+    version: 0.15.1
   '@auth/drizzle-adapter':
     specifier: ^0.3.2
     version: 0.3.2
@@ -45,8 +45,8 @@ dependencies:
     specifier: ^3.13.0
     version: 3.13.0(tailwindcss@3.3.3)
   lucide-svelte:
-    specifier: ^0.275.0
-    version: 0.275.0(svelte@4.2.1)
+    specifier: ^0.279.0
+    version: 0.279.0(svelte@4.2.1)
   nprogress:
     specifier: ^0.2.0
     version: 0.2.0
@@ -165,6 +165,22 @@ packages:
 
   /@auth/core@0.13.0:
     resolution: {integrity: sha512-StjrzUenaKfMr68kmvhiqfY0xvxRvg8wllmem9JAULpPAAAt3uwRUDXICWOP/PfWB4OZ2wQT7rgfm0n42b+Mjg==}
+    peerDependencies:
+      nodemailer: ^6.8.0
+    peerDependenciesMeta:
+      nodemailer:
+        optional: true
+    dependencies:
+      '@panva/hkdf': 1.1.1
+      cookie: 0.5.0
+      jose: 4.14.6
+      oauth4webapi: 2.3.0
+      preact: 10.11.3
+      preact-render-to-string: 5.2.3(preact@10.11.3)
+    dev: false
+
+  /@auth/core@0.15.1:
+    resolution: {integrity: sha512-0jAsjeLt3DZFAhGpiz2jIGVw4wT7X1OdQszIcULPVofn2LD9QyQMgcWnZXc75NkoHKKBMp9UOY8htn1OYkRxEA==}
     peerDependencies:
       nodemailer: ^6.8.0
     peerDependenciesMeta:
@@ -2181,8 +2197,8 @@ packages:
       es5-ext: 0.10.62
     dev: true
 
-  /lucide-svelte@0.275.0(svelte@4.2.1):
-    resolution: {integrity: sha512-8XiaRTLWr5RtGlf7Jx7BlMKcxYjG7Txgno+0gdafkp9Q0cKLvWJ9VnKcOQgPHecFtleN3h5uSwf4ZFwRwZ7A6Q==}
+  /lucide-svelte@0.279.0(svelte@4.2.1):
+    resolution: {integrity: sha512-u9j8tMPxWsv5iXJvrUU/jpyML/k49flr7440UE8QM9V3u0OZt5+qaY5TMiPDTVRMdEELBg4d4ueW1+3Mo3VT4A==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
