@@ -1,10 +1,11 @@
 <script>
   import { trpc } from '$lib/trpc/client'
   import { createQuery } from '@tanstack/svelte-query'
+  import { page } from '$app/stores'
 
   const query = createQuery({
     queryKey: ['mockData'],
-    queryFn: () => trpc().mockData.query(),
+    queryFn: () => trpc($page).mockData.query(),
   })
 </script>
 
@@ -14,7 +15,7 @@
   <p>Error: {$query.error}</p>
 {:else}
   <ul>
-    {#each $query.data as data}
+    {#each $query.data || [] as data}
       <li>{data}</li>
     {/each}
   </ul>
