@@ -7,6 +7,7 @@ export const load = async () => {
       queries: {
         enabled: browser,
         refetchOnMount: false,
+        staleTime: Infinity,
       },
     },
   })
