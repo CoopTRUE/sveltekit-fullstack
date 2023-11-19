@@ -13,7 +13,15 @@ export const auth = middleware(async ({ ctx, next }) => {
       code: 'UNAUTHORIZED',
     })
   }
-  return next()
+  return next({
+    ctx: {
+      ...ctx,
+      session: {
+        ...ctx.session,
+        user: ctx.session.user,
+      },
+    },
+  })
 })
 
 export const { router } = t
