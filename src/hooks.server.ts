@@ -18,6 +18,7 @@ const preloadHandle = (({ event, resolve }) => {
 }) satisfies Handle
 
 const authHandle = SvelteKitAuth({
+  // @ts-expect-error auth-core.d.ts too strict
   adapter: DrizzleAdapter(db),
   trustHost: true,
   secret: AUTH_SECRET,
@@ -28,6 +29,7 @@ const authHandle = SvelteKitAuth({
     }),
   ],
   callbacks: {
+    // @ts-expect-error auth-core.d.ts too strict
     session({ session, user }) {
       console.log({ ...session, user })
       return { ...session, user }
