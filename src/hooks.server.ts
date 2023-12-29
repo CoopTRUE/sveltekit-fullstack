@@ -11,14 +11,12 @@ import { createTRPCHandle } from 'trpc-sveltekit'
 
 const PRELOAD_TYPES = ['js', 'css', 'font']
 
-const preloadHandle = (({ event, resolve }) => {
-  return resolve(event, {
+const preloadHandle = (({ event, resolve }) =>
+  resolve(event, {
     preload: ({ type }) => PRELOAD_TYPES.includes(type),
-  })
-}) satisfies Handle
+  })) satisfies Handle
 
 const authHandle = SvelteKitAuth({
-  // @ts-expect-error auth-core.d.ts too strict
   adapter: DrizzleAdapter(db),
   trustHost: true,
   secret: AUTH_SECRET,

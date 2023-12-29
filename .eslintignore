@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 /build
-/.vercel
 /.svelte-kit
 /package
 .env
@@ -12,9 +11,6 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
-
-# Weird eslint bug
-svelte.config.js
 
 # Drizzle files
 /drizzle

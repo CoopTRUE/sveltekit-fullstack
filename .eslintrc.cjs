@@ -3,7 +3,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:tailwindcss/recommended',
     'plugin:svelte/recommended',
     'prettier',
@@ -34,6 +33,5 @@ module.exports = {
       'warn',
       { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
     ],
-    // '@typescript-eslint/no-unnecessary-type-assertion': 'off',
   },
 }
