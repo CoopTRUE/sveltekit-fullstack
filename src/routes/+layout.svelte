@@ -2,7 +2,7 @@
   import { browser } from '$app/environment'
   import Header from '$lib/components/Header.svelte'
   import ProgressBar from '$lib/components/ProgressBar.svelte'
-  import '../app.pcss'
+  import '../app.postcss'
   import { QueryClientProvider } from '@tanstack/svelte-query'
 
   export let data
