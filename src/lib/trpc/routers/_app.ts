@@ -1,11 +1,9 @@
 import { router } from '../t'
-import { greeting } from './greeting'
-import { mockData } from './mockData'
+import { userRouter } from './user'
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server'
 
 export const appRouter = router({
-  greeting,
-  mockData,
+  user: userRouter,
 })
 
 export type Router = typeof appRouter

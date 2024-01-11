@@ -1,7 +1,26 @@
+import { browser } from '$app/environment'
 import { type ClassValue, clsx } from 'clsx'
 import { cubicOut } from 'svelte/easing'
 import type { TransitionConfig } from 'svelte/transition'
 import { twMerge } from 'tailwind-merge'
+
+// https://stackoverflow.com/questions/53966509/typescript-type-safe-omit-function
+export const omit = <T extends object, K extends keyof T>(obj: T, ...keys: K[]): Omit<T, K> => {
+  const cloned = { ...obj }
+  for (const key of keys) {
+    delete cloned[key]
+  }
+  return cloned
+}
+
+export function preloadImage(url: string) {
+  return new Promise<void>((resolve) => {
+    if (!browser) resolve()
+    const img = new Image()
+    img.src = url
+    img.onload = () => resolve()
+  })
+}
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

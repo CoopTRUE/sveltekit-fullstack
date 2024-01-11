@@ -1,8 +1,8 @@
-import type { users } from '$lib/server/schema/schema'
-import type { InferSelectModel } from 'drizzle-orm'
+import type { UnsafeUser } from '$lib/types'
 
 declare module '@auth/core/types' {
   interface Session {
-    user: InferSelectModel<typeof users>
+    // Unsafe because it includes email and emailVerified
+    user: UnsafeUser
   }
 }
