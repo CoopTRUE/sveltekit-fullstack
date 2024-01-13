@@ -2,7 +2,7 @@ import { createContext } from '$lib/trpc/context'
 import { appRouter } from '$lib/trpc/routers/_app'
 import authHandle from './authHandle'
 import protectHandle from './protectHandle'
-import { type Handle } from '@sveltejs/kit'
+import type { Handle } from '@sveltejs/kit'
 import { sequence } from '@sveltejs/kit/hooks'
 import { createTRPCHandle } from 'trpc-sveltekit'
 
