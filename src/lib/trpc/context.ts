@@ -1,4 +1,4 @@
-import { db } from '$lib/server/db'
+import db from '$lib/server/db'
 import type { RequestEvent } from '@sveltejs/kit'
 import type { inferAsyncReturnType } from '@trpc/server'
 

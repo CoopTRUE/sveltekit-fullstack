@@ -1,5 +1,5 @@
 import { AUTH_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/static/private'
-import { db } from '$lib/server/db'
+import db from '$lib/server/db'
 import * as schema from '$lib/server/db/schema'
 import Google from '@auth/core/providers/google'
 import { DrizzleAdapter } from '@auth/drizzle-adapter'
