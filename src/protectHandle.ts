@@ -10,7 +10,7 @@ export default (async ({ event, resolve }) => {
   if (isApp && !isProtected) return resolve(event)
 
   console.log('Got session for checking auth in protectHandle')
-  const session = await event.locals.getSession()
+  const session = await event.locals.auth()
   const user = session?.user
 
   function getClientIp() {

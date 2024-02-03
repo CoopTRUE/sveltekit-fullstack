@@ -7,9 +7,7 @@ import { SvelteKitAuth } from '@auth/sveltekit'
 import type { PgTableFn } from 'drizzle-orm/pg-core'
 
 const map = {
-  user: schema.users,
-  account: schema.accounts,
-  session: schema.sessions,
+  ...schema,
   verification_token: schema.verificationTokens,
 }
 const tableFn = <T extends keyof typeof map>(name: T, ..._: unknown[]) => {
@@ -26,10 +24,4 @@ export default SvelteKitAuth({
       clientSecret: GOOGLE_CLIENT_SECRET,
     }),
   ],
-  callbacks: {
-    // @ts-expect-error Using database, not JWT
-    session({ session, user }) {
-      return { ...session, user }
-    },
-  },
 })

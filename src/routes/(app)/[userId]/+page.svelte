@@ -4,18 +4,19 @@
   export let data
   $: ({ userId } = data)
 
-  const query = createUserQuery({ userId })
+  $: query = createUserQuery({ userId })
+  $: name = $query.data?.name || `User ${userId}`
 </script>
 
 <svelte:head>
-  <title>User {userId} | Sveltekit</title>
-  <meta name="description" content="User {userId} page" />
+  <title>{name} | Sveltekit</title>
+  <meta name="description" content="{name}'s' page" />
 </svelte:head>
 
 {#if $query.isLoading}
   <p>Loading...</p>
 {:else if $query.isSuccess}
-  <code>{$query.data}</code>
+  <code>{JSON.stringify($query.data)}</code>
 {:else if $query.isError}
   <p>Error: {$query.error.message}</p>
 {/if}
