@@ -1,21 +1,21 @@
 import { AUTH_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/static/private'
 import db from '$lib/server/db'
 import * as schema from '$lib/server/db/schema'
-import Google from '@auth/core/providers/google'
 import { DrizzleAdapter } from '@auth/drizzle-adapter'
 import { SvelteKitAuth } from '@auth/sveltekit'
+import Google from '@auth/sveltekit/providers/google'
 import type { PgTableFn } from 'drizzle-orm/pg-core'
 
-const map = {
-  ...schema,
-  verification_token: schema.verificationTokens,
-}
-const tableFn = <T extends keyof typeof map>(name: T, ..._: unknown[]) => {
-  return map[name]
+function customTableFn(tableName: 'user' | 'account' | 'session', ..._: unknown[]) {
+  // user -> users, account -> accounts, etc.
+  const correctedTableName = `${tableName}s` as const
+  const table = schema[correctedTableName]
+  return table
 }
 
-export default SvelteKitAuth({
-  adapter: DrizzleAdapter(db, tableFn as PgTableFn),
+export const { handle, signIn, signOut } = SvelteKitAuth({
+  // @ts-expect-error - Overriding the default table function
+  adapter: DrizzleAdapter(db, customTableFn as PgTableFn),
   trustHost: true,
   secret: AUTH_SECRET,
   providers: [
