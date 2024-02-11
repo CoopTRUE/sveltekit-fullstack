@@ -1,8 +1,14 @@
 import { browser } from '$app/environment'
+import type { Router } from './trpc/routers/_app'
+import { TRPCClientError } from '@trpc/client'
 import { type ClassValue, clsx } from 'clsx'
 import { cubicOut } from 'svelte/easing'
 import type { TransitionConfig } from 'svelte/transition'
 import { twMerge } from 'tailwind-merge'
+
+export function isTRPCClientError(cause: unknown): cause is TRPCClientError<Router> {
+  return cause instanceof TRPCClientError
+}
 
 // https://stackoverflow.com/questions/53966509/typescript-type-safe-omit-function
 export const omit = <T extends object, K extends keyof T>(obj: T, ...keys: K[]): Omit<T, K> => {
