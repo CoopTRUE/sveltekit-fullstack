@@ -2,10 +2,9 @@
   import { createUserQuery } from '$lib/queries'
 
   export let data
-  $: ({ userId } = data)
+  const user = data.user()
 
-  $: query = createUserQuery({ userId })
-  $: name = $query.data?.name || `User ${userId}`
+  $: name = $user.data?.name || `User ${data.userId}`
 </script>
 
 <svelte:head>
@@ -13,10 +12,10 @@
   <meta name="description" content="{name}'s' page" />
 </svelte:head>
 
-{#if $query.isLoading}
+{#if $user.isLoading}
   <p>Loading...</p>
-{:else if $query.isSuccess}
-  <code>{JSON.stringify($query.data)}</code>
-{:else if $query.isError}
-  <p>Error: {$query.error.message}</p>
+{:else if $user.isSuccess}
+  <code>{JSON.stringify($user.data)}</code>
+{:else if $user.isError}
+  <p>Error: {$user.error.message}</p>
 {/if}

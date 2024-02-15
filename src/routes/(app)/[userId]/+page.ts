@@ -5,12 +5,8 @@ export async function load(event) {
   const { queryClient } = await event.parent()
   const { userId } = event.params
 
-  await queryClient
-    .fetchQuery({
-      queryKey: ['user', userId],
-      queryFn: () => trpc(event).user.get.query({ userId }),
-    })
-    .catch(() => error(404, 'User not found'))
+  const client = trpc(event, queryClient)
+  const user = await client.user.get.createServerQuery({ userId }, { ssr: true })
 
-  return { userId }
+  return { user, userId }
 }

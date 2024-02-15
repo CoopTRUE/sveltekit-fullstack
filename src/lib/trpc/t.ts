@@ -2,8 +2,9 @@ import type { Context } from './context'
 import { TRPCError, initTRPC } from '@trpc/server'
 import superjson from 'superjson'
 
+export const transformer = superjson
 const t = initTRPC.context<Context>().create({
-  transformer: superjson,
+  transformer,
 })
 
 export const { router, middleware, createCallerFactory } = t
