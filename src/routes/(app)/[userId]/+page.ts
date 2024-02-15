@@ -1,5 +1,4 @@
 import { trpc } from '$lib/trpc/client'
-import { error } from '@sveltejs/kit'
 
 export async function load(event) {
   const { queryClient } = await event.parent()

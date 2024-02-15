@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { createUserQuery } from '$lib/queries'
-
   export let data
   const user = data.user()
 
