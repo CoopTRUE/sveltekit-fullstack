@@ -35,6 +35,12 @@ export const omit = <T extends object, K extends keyof T>(obj: T, ...keys: K[]):
   return cloned
 }
 
+// https://stackoverflow.com/a/60227013
+export function pick<T extends object, K extends keyof T>(base: T, ...keys: K[]): Pick<T, K> {
+  const entries = keys.map((key) => [key, base[key]])
+  return Object.fromEntries(entries)
+}
+
 export function preloadImage(url: string) {
   return new Promise<void>((resolve) => {
     if (!browser) resolve()
