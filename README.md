@@ -1,6 +1,12 @@
 # Sveltekit Fullstack
 
-A fullstack Sveltekit template with tRPC, DrizzleORM, @auth/sveltekit, TanStack Query, and TailwindCSS.
+A complete **fully typesafe** Sveltekit skeleton project built with `tRPC`, `DrizzleORM`, `Auth.js`, `TanStack Query`, `Tailwind CSS`, and `shadcn/ui`
+
+- ✔️Database ORM
+- ✔️Google OAuth
+- ✔️UI Component Library
+- ✔️Preloading, Prerendering, & Caching
+- ✔️Extremely small bundle `~66.1kB (gzip)`
 
 ## Installing
 
