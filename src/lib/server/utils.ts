@@ -3,9 +3,22 @@ import { pick } from '$lib/utils'
 import { getTableColumns } from 'drizzle-orm'
 import type { AnyPgTable } from 'drizzle-orm/pg-core'
 
+type InferColumnNames<T extends AnyPgTable> = keyof T['_']['columns']
+
 /**
- * Used in .select({...pickSchema(schema, 'column1', 'column2', ...)})
+ * Fully type-safe way to pick columns from a schema (plus rename-symbol support in IDEs)
+ *
+ * @example
+ *
+ * ```ts
+ * .select({
+ *  ...pickSchema(userSchema, { id: true, email: true })
+ * })
+ * ```
  */
-export function pickSchema<T extends AnyPgTable>(schema: T, ...keys: (keyof T['_']['columns'])[]) {
-  return pick(getTableColumns(schema), ...keys)
+export function pickSchema<T extends AnyPgTable>(
+  schema: T,
+  include: { [P in InferColumnNames<T>]?: true }
+) {
+  return pick(getTableColumns(schema), ...(Object.keys(include) as InferColumnNames<T>[]))
 }
