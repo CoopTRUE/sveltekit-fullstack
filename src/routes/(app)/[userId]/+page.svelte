@@ -1,6 +1,9 @@
 <script lang="ts">
+  import { page } from '$app/stores'
+  import { trpc } from '$lib/trpc/client'
+
   export let data
-  const user = data.user()
+  const user = trpc($page).user.default.createQuery({ userId: data.userId })
 
   $: name = $user.data?.name || `User ${data.userId}`
 </script>

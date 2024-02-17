@@ -1,13 +1,29 @@
 import { browser } from '$app/environment'
-import type { Router } from './trpc/routers/_app'
-import { TRPCClientError } from '@trpc/client'
 import { type ClassValue, clsx } from 'clsx'
 import { cubicOut } from 'svelte/easing'
 import type { TransitionConfig } from 'svelte/transition'
 import { twMerge } from 'tailwind-merge'
 
-export function isTRPCClientError(cause: unknown): cause is TRPCClientError<Router> {
-  return cause instanceof TRPCClientError
+/**
+ * Run prefetch functions only when needed
+ */
+export function prefetchApi(...prefetchFunctions: (() => Promise<unknown>)[]) {
+  if (!browser) return
+  prefetchFunctions.map((fn) => fn())
+}
+
+/**
+ * **YOU MUST AWAIT THIS FUNCTION**
+ *
+ * Run and await prefetch functions only when needed.
+ *
+ * This is different from `prefetchApi` as it will wait for all the prefetch functions to settle before continuing.
+ *
+ * Use this when you want to SSR the fetched data (No loading state)
+ */
+export async function prerenderApi(...prefetchFunctions: (() => Promise<unknown>)[]) {
+  const promises = prefetchFunctions.map((fn) => fn())
+  await Promise.allSettled(promises)
 }
 
 // https://stackoverflow.com/questions/53966509/typescript-type-safe-omit-function

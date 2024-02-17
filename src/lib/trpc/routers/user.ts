@@ -4,7 +4,7 @@ import { TRPCError } from '@trpc/server'
 import { z } from 'zod'
 
 export const userRouter = router({
-  get: publicProcedure.input(z.object({ userId: z.string() })).query(async ({ input }) => {
+  default: publicProcedure.input(z.object({ userId: z.string() })).query(async ({ input }) => {
     const user = await db.query.users.findFirst({
       columns: { email: false, emailVerified: false },
       where: (user, { eq }) => eq(user.id, input.userId),
