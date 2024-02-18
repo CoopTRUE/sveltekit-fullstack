@@ -27,11 +27,11 @@ dependencies:
     specifier: ^3.0.2
     version: 3.0.2(svelte@4.2.11)(vite@5.1.3)
   '@tanstack/svelte-query':
-    specifier: ^5.20.5
-    version: 5.20.5(svelte@4.2.11)
+    specifier: ^5.21.4
+    version: 5.21.4(svelte@4.2.11)
   '@tanstack/svelte-query-devtools':
-    specifier: ^5.21.0
-    version: 5.21.0(@tanstack/svelte-query@5.20.5)(svelte@4.2.11)
+    specifier: ^5.21.5
+    version: 5.21.5(@tanstack/svelte-query@5.21.4)(svelte@4.2.11)
   '@trpc/client':
     specifier: ^10.45.1
     version: 10.45.1(@trpc/server@10.45.1)
@@ -78,8 +78,8 @@ dependencies:
     specifier: ^3.4.1
     version: 3.4.1
   trpc-svelte-query-adapter:
-    specifier: ^2.2.2
-    version: 2.2.2(@tanstack/svelte-query@5.20.5)(@trpc/client@10.45.1)(@trpc/server@10.45.1)(@types/node@20.11.19)(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(svelte@4.2.11)(typescript@5.3.3)
+    specifier: ^2.2.3
+    version: 2.2.3(@tanstack/svelte-query@5.21.4)(@trpc/client@10.45.1)(@trpc/server@10.45.1)(@types/node@20.11.19)(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(svelte@4.2.11)(typescript@5.3.3)
   trpc-sveltekit:
     specifier: ^3.5.26
     version: 3.5.26(@sveltejs/adapter-node@4.0.1)(@trpc/client@10.45.1)(@trpc/server@10.45.1)(ws@8.16.0)
@@ -1363,32 +1363,32 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@tanstack/query-core@5.20.5:
-    resolution: {integrity: sha512-T1W28gGgWn0A++tH3lxj3ZuUVZZorsiKcv+R50RwmPYz62YoDEkG4/aXHZELGkRp4DfrW07dyq2K5dvJ4Wl1aA==}
+  /@tanstack/query-core@5.21.4:
+    resolution: {integrity: sha512-k3u4RcDAtcCurs8KVEIf52k4yUayc852v4ZQrtI8pkEii71riM9758A2WVGo5T/v4/X7b1RLON5g0aDvkoZYCA==}
     dev: false
 
-  /@tanstack/query-devtools@5.21.0:
-    resolution: {integrity: sha512-hbfuh9xredeehLhlJY38sey7Ezlr3KduDHRkrnvbwuTQCgkvixFdcJGMpUx0khh74q3Ay8QGa2uO+fV/kSNlww==}
+  /@tanstack/query-devtools@5.21.5:
+    resolution: {integrity: sha512-A7rVpVP1GRcQBnB/GzXZfVhxmoP17J1f+RoYRu+DOV8Jp4QPIJRE/nFueEiiRPSVL7aNcNw4rTm0RmJZRI2fUA==}
     dev: false
 
-  /@tanstack/svelte-query-devtools@5.21.0(@tanstack/svelte-query@5.20.5)(svelte@4.2.11):
-    resolution: {integrity: sha512-bLe/4Q1tdMd9mOQuib7526s7eFnNUosjSIdjLIiX0C3t0y9dP9ECkRs/0pIHylz+wg2ZIKGY3gY6zKsGemlGoA==}
+  /@tanstack/svelte-query-devtools@5.21.5(@tanstack/svelte-query@5.21.4)(svelte@4.2.11):
+    resolution: {integrity: sha512-kMVmv7xRz/Jhbo0xYhrBl9t7UNuD/1PS7xvrcxZ5Of3KXZtYfKCmSYF7bo7UoZbdsZAhrhXdjDXyiS65nYnU+g==}
     peerDependencies:
-      '@tanstack/svelte-query': ^5.20.5
+      '@tanstack/svelte-query': ^5.21.4
       svelte: ^3.54.0 || ^4.0.0 || ^5.0.0-next.0
     dependencies:
-      '@tanstack/query-devtools': 5.21.0
-      '@tanstack/svelte-query': 5.20.5(svelte@4.2.11)
+      '@tanstack/query-devtools': 5.21.5
+      '@tanstack/svelte-query': 5.21.4(svelte@4.2.11)
       esm-env: 1.0.0
       svelte: 4.2.11
     dev: false
 
-  /@tanstack/svelte-query@5.20.5(svelte@4.2.11):
-    resolution: {integrity: sha512-Ji9rE4ovy1m9i1chb/06JdEksNM+KzQlRfbdKvaaNTSpa6vp/Bj5PO9P7dq7EmVDsuFZgixUmF7VPzNvMQ8vNw==}
+  /@tanstack/svelte-query@5.21.4(svelte@4.2.11):
+    resolution: {integrity: sha512-p9VDRzajeEIF+6aGmq/Ld1/sWkDlkgQGHtSZtAw6O4EPP9w7myddAhAKE/zIHQFMj9VUbNiVJkcn2DFkUil9xg==}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0 || ^5.0.0-next.0
     dependencies:
-      '@tanstack/query-core': 5.20.5
+      '@tanstack/query-core': 5.21.4
       svelte: 4.2.11
     dev: false
 
@@ -1671,7 +1671,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001587
+      caniuse-lite: 1.0.30001588
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1724,7 +1724,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001587
+      caniuse-lite: 1.0.30001588
       electron-to-chromium: 1.4.673
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
@@ -1760,8 +1760,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /caniuse-lite@1.0.30001587:
-    resolution: {integrity: sha512-HMFNotUmLXn71BQxg8cijvqxnIAofforZOwGsxyXJ0qugTdspUF4sPSJ2vhgprHCB996tIDzEq1ubumPDV8ULA==}
+  /caniuse-lite@1.0.30001588:
+    resolution: {integrity: sha512-+hVY9jE44uKLkH0SrUTqxjxqNTOWHsbnQDIKjwkZ3lNTzUUVdBLBGXtj/q5Mp5u98r3droaZAewQuEDzjQdZlQ==}
     dev: false
 
   /chalk@2.4.2:
@@ -3839,8 +3839,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /trpc-svelte-query-adapter@2.2.2(@tanstack/svelte-query@5.20.5)(@trpc/client@10.45.1)(@trpc/server@10.45.1)(@types/node@20.11.19)(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(svelte@4.2.11)(typescript@5.3.3):
-    resolution: {integrity: sha512-t4zIPQ+gji4jqbkYayRFUj6sCYGIuq/yrZ1SyM+HGQge7ZqP75xyLnykSsRHPBr975W6U/a+z1t3anGX7Mq/3A==}
+  /trpc-svelte-query-adapter@2.2.3(@tanstack/svelte-query@5.21.4)(@trpc/client@10.45.1)(@trpc/server@10.45.1)(@types/node@20.11.19)(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(svelte@4.2.11)(typescript@5.3.3):
+    resolution: {integrity: sha512-rWOQwn9tmsT6QmtBmTX+iZEaR1kywnrALR+Hx2k8JNeiSVfDOdH2sRIADfQdNm/YaHkVHqgNke200G/Voqyysg==}
     peerDependencies:
       '@tanstack/svelte-query': ^5.8.2
       '@trpc/client': ^10.43.3
@@ -3852,7 +3852,7 @@ packages:
       svelte: ^4.2.3
       typescript: ^5.2.2
     dependencies:
-      '@tanstack/svelte-query': 5.20.5(svelte@4.2.11)
+      '@tanstack/svelte-query': 5.21.4(svelte@4.2.11)
       '@trpc/client': 10.45.1(@trpc/server@10.45.1)
       '@trpc/server': 10.45.1
       '@types/node': 20.11.19
