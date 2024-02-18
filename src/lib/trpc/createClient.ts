@@ -2,6 +2,7 @@
 // @ts-nocheck
 // ripped from https://github.com/icflorescu/trpc-sveltekit/blob/main/package/src/server.ts
 // modified to log client requests in development
+import { browser, dev } from '$app/environment'
 import {
   createTRPCProxyClient,
   httpBatchLink,
@@ -77,8 +78,7 @@ export function createTRPCClient<Router extends AnyRouter>(
     links: [
       loggerLink({
         enabled: (op) =>
-          process.env.NODE_ENV === 'development' ||
-          (op.direction === 'down' && op.result instanceof Error),
+          (dev && browser) || (op.direction === 'down' && op.result instanceof Error),
       }),
       httpBatchLink({
         url:
