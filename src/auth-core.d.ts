@@ -1,4 +1,4 @@
-import type { UnsafeUser } from '$lib/types'
+import type { UnsafeUser } from '$lib/server/db/schema'
 import type { AdapterSession } from '@auth/core/adapters'
 import '@auth/sveltekit'
 

@@ -12,5 +12,6 @@ export const users = pgTable('user', {
   image: text('image').notNull(),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 })
-export type User = InferSelectModel<typeof users>
+export type UnsafeUser = InferSelectModel<typeof users>
+export type User = Omit<UnsafeUser, 'email' | 'emailVerified'>
 export type CreateUser = InferInsertModel<typeof users>

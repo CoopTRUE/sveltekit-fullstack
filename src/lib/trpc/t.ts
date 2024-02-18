@@ -8,7 +8,7 @@ const t = initTRPC.context<Context>().create({
 })
 
 export const { router, middleware, createCallerFactory } = t
-export const auth = middleware(async ({ ctx, next }) => {
+const auth = middleware(async ({ ctx, next }) => {
   const session = await ctx.auth()
   if (!session) {
     throw new TRPCError({ code: 'UNAUTHORIZED' })
