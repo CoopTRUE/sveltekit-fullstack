@@ -77,8 +77,7 @@ export function createTRPCClient<Router extends AnyRouter>(
     transformer,
     links: [
       loggerLink({
-        enabled: (op) =>
-          (dev && browser) || (op.direction === 'down' && op.result instanceof Error),
+        enabled: () => dev && browser,
       }),
       httpBatchLink({
         url:
