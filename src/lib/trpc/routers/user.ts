@@ -1,5 +1,5 @@
 import db from '$lib/server/db'
-import { protectedProcedure, publicProcedure, router } from '../t'
+import { protectedProcedure, router } from '../t'
 import { TRPCError } from '@trpc/server'
 import { z } from 'zod'
 
