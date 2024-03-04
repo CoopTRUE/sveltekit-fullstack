@@ -1,7 +1,7 @@
 <script lang="ts">
   import { signIn } from '@auth/sveltekit/client'
   import { Button } from '$lib/components/ui/button'
-  import { Smile } from 'lucide-svelte'
+  import Smile from 'lucide-svelte/icons/smile'
 
   let clicked = 0
 </script>
