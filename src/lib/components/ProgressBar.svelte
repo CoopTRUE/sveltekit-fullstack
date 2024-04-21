@@ -1,7 +1,7 @@
 <script lang="ts">
+  import 'nprogress/nprogress.css'
   import { navigating } from '$app/stores'
   import NProgress from 'nprogress'
-  import 'nprogress/nprogress.css'
 
   NProgress.configure({
     showSpinner: false,

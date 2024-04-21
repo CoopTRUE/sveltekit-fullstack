@@ -1,8 +1,8 @@
-import db from '$lib/server/db'
-import * as schema from '$lib/server/db/schema'
 import { DrizzleAdapter } from '@auth/drizzle-adapter'
 import { SvelteKitAuth } from '@auth/sveltekit'
 import Google from '@auth/sveltekit/providers/google'
+import db from '$lib/server/db'
+import * as schema from '$lib/server/db/schema'
 
 function customTableFn(tableName: 'user' | 'account' | 'session', ..._: unknown[]) {
   // user -> users, account -> accounts, etc.

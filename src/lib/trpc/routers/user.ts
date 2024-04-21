@@ -1,6 +1,6 @@
-import db from '$lib/server/db'
 import { protectedProcedure, router } from '../t'
 import { TRPCError } from '@trpc/server'
+import db from '$lib/server/db'
 import { z } from 'zod'
 
 export const userRouter = router({

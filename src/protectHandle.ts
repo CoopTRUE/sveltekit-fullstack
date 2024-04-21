@@ -1,4 +1,4 @@
-import { redirect, type Handle } from '@sveltejs/kit'
+import { type Handle, redirect } from '@sveltejs/kit'
 
 export default (async ({ event, resolve }) => {
   const route = event.route.id

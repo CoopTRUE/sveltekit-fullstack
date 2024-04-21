@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Header from '$lib/components/Header.svelte'
   import { QueryClientProvider } from '@tanstack/svelte-query'
   import { SvelteQueryDevtools } from '@tanstack/svelte-query-devtools'
+  import Header from '$lib/components/Header.svelte'
 
   export let data
 </script>

@@ -4,6 +4,9 @@
   "[svg]": {
     "editor.formatOnSave": false
   },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
   "eslint.validate": ["svelte"],
   "files.eol": "\n"
 }

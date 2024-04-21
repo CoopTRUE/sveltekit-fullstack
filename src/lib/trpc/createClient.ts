@@ -2,15 +2,15 @@
 // @ts-nocheck
 // ripped from https://github.com/icflorescu/trpc-sveltekit/blob/main/package/src/server.ts
 // modified to log client requests in development
-import { browser, dev } from '$app/environment'
 import {
   createTRPCProxyClient,
   httpBatchLink,
-  loggerLink,
   type HTTPHeaders,
+  loggerLink,
   type TRPCLink,
 } from '@trpc/client'
 import type { AnyRouter } from '@trpc/server'
+import { browser, dev } from '$app/environment'
 
 export type TRPCClientInit = { fetch?: typeof window.fetch; url: { origin: string } }
 
