@@ -1,12 +1,16 @@
 import type { InferInsertModel, InferSelectModel } from 'drizzle-orm'
-import { timestamp, pgTable, text } from 'drizzle-orm/pg-core'
+import { timestamp, pgTable, text, uuid } from 'drizzle-orm/pg-core'
 
-export * from './auth'
+export {
+  postgresAccountsTable as accounts,
+  postgresSessionsTable as sessions,
+  postgresVerificationTokensTable as verificationTokens,
+} from '@auth/drizzle-adapter'
 
 export const users = pgTable('user', {
-  id: text('id').primaryKey(),
+  id: uuid('id').defaultRandom().primaryKey(),
   name: text('name').notNull(),
-  email: text('email').notNull(),
+  email: text('email').unique().notNull(),
   emailVerified: timestamp('emailVerified', { withTimezone: true }),
   body: text('body').notNull().default('test body'),
   image: text('image').notNull(),
