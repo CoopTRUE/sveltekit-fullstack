@@ -50,7 +50,6 @@ module.exports = {
     'svelte/block-lang': [
       'error',
       {
-        enforceScriptPresent: true,
         script: 'ts',
         style: 'postcss',
       },
