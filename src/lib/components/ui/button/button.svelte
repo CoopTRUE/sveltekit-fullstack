@@ -14,8 +14,8 @@
 </script>
 
 <ButtonPrimitive.Root
-  {builders}
   class={cn(buttonVariants({ variant, size, className }))}
+  {builders}
   type="button"
   {...$$restProps}
   on:click

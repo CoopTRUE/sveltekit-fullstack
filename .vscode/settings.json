@@ -5,7 +5,7 @@
     "editor.formatOnSave": false
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll": "always"
   },
   "eslint.validate": ["svelte"],
   "files.eol": "\n"

@@ -46,5 +46,14 @@ module.exports = {
       },
     ],
     'simple-import-sort/exports': 'error',
+    'svelte/sort-attributes': 'error',
+    'svelte/block-lang': [
+      'error',
+      {
+        enforceScriptPresent: true,
+        script: 'ts',
+        style: 'postcss',
+      },
+    ],
   },
 }
