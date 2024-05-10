@@ -10,25 +10,25 @@ A complete **fully typesafe** Sveltekit skeleton project built with `tRPC`, `Dri
 
 ## Installing
 
-This project uses [pnpm](https://pnpm.io/) for dependency management. If you don't have it installed, you can install it with `npm install -g pnpm`.
+This project uses [bun](https://bun.sh/) for package management. If you don't have it installed, you can install it with `curl -fsSL https://bun.sh/install | bash`
 
 ```bash
 # install dependencies
-pnpm install
+bun install
 ```
 
 ## Developing
 
 ```bash
 # start dev server
-pnpm dev
+bun run dev
 ```
 
 ## Building
 
 ```bash
 # build for production
-pnpm build
+bun run build
 ```
 
 > This project was created by [CoopTRUE](https://github.com/CoopTRUE)
